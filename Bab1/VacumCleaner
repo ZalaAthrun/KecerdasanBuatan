@@ -31,7 +31,7 @@ public class VacumCleaner {
         l[5].set_position_location(null, l[2], l[4], null);
         System.out.println("Masukkan Titik Start Awal Pembersihan ( 1 - " + number_of_nodes + ")");
         int in = input.nextInt();
-        vc.startPosisi(l[in - 1]);
+        vc.start_position(l[in - 1]);
         vc.clear(l);
     }
     Location is_now_accessed = null;
@@ -43,7 +43,7 @@ public class VacumCleaner {
         filtering_object_litter = new Scanner(file).nextLine();
         number_of_nodes = nodes_location_amount;
     }
-    void startPosisi(Location Start) {
+    void start_position(Location Start) {
         is_now_accessed = Start;
     }
     void clear(Location [] l) throws FileNotFoundException, InterruptedException {
