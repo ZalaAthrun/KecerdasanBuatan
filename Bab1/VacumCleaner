@@ -121,9 +121,9 @@ class Location {
     String now_acessed_condition;
     boolean status_acessed = false;
     int numerical_identity;
-    Location(int no, String kond) {
-        numerical_identity = no;
-        now_acessed_condition = kond;
+    Location(int number, String condition) {
+        numerical_identity = number;
+        now_acessed_condition = condition;
     }
     void set_position_location(Location going_to_upper_side, Location going_to_lower_side, Location going_to_left_side, Location going_to_right_side) {
         this.going_to_upper_side = going_to_upper_side;
