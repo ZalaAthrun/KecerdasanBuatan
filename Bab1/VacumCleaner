@@ -85,39 +85,39 @@ public class VacumCleaner {
         Location temporary_nodal = is_now_accessed;
         if (is_now_accessed.going_to_right_side != null && is_now_accessed.going_to_right_side.status_acessed == false) {
             is_now_accessed = is_now_accessed.going_to_right_side;
-            is_now_accessed.prev = temporary_nodal;
+            is_now_accessed.previous_location = temporary_nodal;
             System.out.println("Jalan Ke Kanan");
         } else if (is_now_accessed.going_to_upper_side != null && is_now_accessed.going_to_upper_side.status_acessed == false) {
             is_now_accessed = is_now_accessed.going_to_upper_side;
-            is_now_accessed.prev = temporary_nodal;
+            is_now_accessed.previous_location = temporary_nodal;
             System.out.println("Jalan Ke Atas");
         } else if (is_now_accessed.going_to_left_side != null && is_now_accessed.going_to_left_side.status_acessed == false) {
             is_now_accessed = is_now_accessed.going_to_left_side;
-            is_now_accessed.prev = temporary_nodal;
+            is_now_accessed.previous_location = temporary_nodal;
             System.out.println("Jalan Ke Kiri");
         } else if (is_now_accessed.going_to_lower_side != null && is_now_accessed.going_to_lower_side.status_acessed == false) {
             is_now_accessed = is_now_accessed.going_to_lower_side;
-            is_now_accessed.prev = temporary_nodal;
+            is_now_accessed.previous_location = temporary_nodal;
             System.out.println("Jalan Ke Bawah");
         } else {
             if(check_status_accessed_all(l)==false){
-            if(is_now_accessed.prev == is_now_accessed.going_to_right_side){
+            if(is_now_accessed.previous_location == is_now_accessed.going_to_right_side){
                 System.out.println("Jalan Ke kanan");
-            }else if(is_now_accessed.prev == is_now_accessed.going_to_left_side){
+            }else if(is_now_accessed.previous_location == is_now_accessed.going_to_left_side){
                 System.out.println("Jalan Ke kiri");
-            }else if(is_now_accessed.prev == is_now_accessed.going_to_upper_side){
+            }else if(is_now_accessed.previous_location == is_now_accessed.going_to_upper_side){
                 System.out.println("Jalan Ke atas");
             }else{
                 System.out.println("Jalan Ke bawah");
             }
-            is_now_accessed = is_now_accessed.prev;
+            is_now_accessed = is_now_accessed.previous_location;
             going_backwards = true;
             }
         }
     }
 }
 class Location {
-    Location prev, going_to_upper_side, going_to_lower_side, going_to_left_side, going_to_right_side;
+    Location previous_location, going_to_upper_side, going_to_lower_side, going_to_left_side, going_to_right_side;
     String now_acessed_condition;
     boolean status_acessed = false;
     int numerical_identity;
